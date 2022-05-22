@@ -1,7 +1,11 @@
 [package]
 name = "infinite-uuid7"
 version = "0.1.0"
+authors = ["LiosK <contact@mail.liosk.net>"]
+license = "Apache-2.0"
 edition = "2021"
+description = "Print UUIDv7 (+ generator stats) infinitely"
+repository = "https://github.com/LiosK/infinite-uuid7-rs"
 publish = false
 
 [dependencies]
