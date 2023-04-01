@@ -1,22 +1,21 @@
+use std::{io, io::Write as _, time};
+
 use rand::rngs::ThreadRng;
-use std::io::{stdout, BufWriter, Write};
-use std::time::{SystemTime, UNIX_EPOCH};
 use uuid7::gen7::{Generator, Status};
 
-fn main() {
-    let mut out = BufWriter::new(stdout());
+fn main() -> io::Result<()> {
+    let mut out = io::BufWriter::new(io::stdout());
     eprintln!("Print stats every 10 seconds....");
 
     let mut g: Generator<ThreadRng> = Default::default();
-    let mut buffer = [b'\n'; 37];
     let mut counters: Counters = Default::default();
     let mut ts_prev_print = get_timestamp();
     loop {
         let ts = get_timestamp();
         let (id, status) = g.generate_core(ts);
 
-        id.write_utf8(&mut buffer);
-        out.write(&buffer).unwrap();
+        out.write_all(id.encode().as_bytes()).unwrap();
+        out.write_all(&[b'\n']).unwrap();
 
         counters.count(status);
         if ts >= ts_prev_print + 10_000 {
@@ -29,9 +28,9 @@ fn main() {
 
 #[inline(always)]
 fn get_timestamp() -> u64 {
-    SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .expect("clock may have gone backward")
+    time::SystemTime::now()
+        .duration_since(time::UNIX_EPOCH)
+        .expect("clock may have gone backwards")
         .as_millis() as u64
 }
 
