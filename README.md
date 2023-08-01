@@ -32,12 +32,10 @@ Print generator stats to stderr:
 ```text
 infinite-uuid7 > /dev/null
 Print stats every 10 seconds....
-Total 162695803, NewTimestamp 10001, CounterInc 162685802, TimestampInc 0, ClockRollback 0
-Total 162859078, NewTimestamp 10000, CounterInc 162849078, TimestampInc 0, ClockRollback 0
-Total 162709299, NewTimestamp 10000, CounterInc 162699299, TimestampInc 0, ClockRollback 0
-Total 162980240, NewTimestamp 10000, CounterInc 162970240, TimestampInc 0, ClockRollback 0
-Total 162825857, NewTimestamp 10000, CounterInc 162815857, TimestampInc 0, ClockRollback 0
-Total 162761092, NewTimestamp 10000, CounterInc 162751092, TimestampInc 0, ClockRollback 0
+Total 121579551, ClockRollback 0
+Total 121617861, ClockRollback 0
+Total 121504514, ClockRollback 0
+Total 121850439, ClockRollback 0
 ...
 ```
 
