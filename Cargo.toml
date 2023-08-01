@@ -1,6 +1,6 @@
 [package]
 name = "infinite-uuid7"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["LiosK <contact@mail.liosk.net>"]
 license = "Apache-2.0"
 edition = "2021"
@@ -10,7 +10,7 @@ publish = false
 
 [dependencies]
 rand = "0.8"
-uuid7 = "0.6.1"
+uuid7 = "0.7.0"
 
 [profile.release]
 lto = true
